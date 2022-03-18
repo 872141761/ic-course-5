@@ -3,20 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>microblog3</title>
+    <title>Microblog</title>
     <base href="/" />
     <link rel="icon" href="favicon.ico" />
-    <link type="text/css" rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="https://unpkg.com/simpledotcss/simple.min.css">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">-->
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">-->
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
   </head>
   <body>
+    <header>
+      <h1>Microblog</h1>
+      <h2 id="author"></h2>
+    </header>
     <main>
-      <img src="logo.png" alt="DFINITY logo" />
-      <form action="#">
-        <label for="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting"></section>
+      <h4>Section 1: Change Your Name</h4>
+      <input id="changeName" type="text" value=""><button id="saveName">save</button><br>
+
+      <h4>Section 2: Follow Someone</h4>
+      <input id="follow" type="text" value=""><button id="saveFollow">follow</button><br>
+
+      <h4>Section 3: Follows</h4>
+      <div id="follows"></div>
+
+      <h4>Section 4: Posts && TimeLine</h4>
+      Since: <input id="sinceTime" type="text" value="" placeholder=""><br>
+      <button id="refreshPosts">Search my posts</button>&nbsp;<button id="refreshTimeline">Search Timeline</button><br>
+      <div><details><summary>My posts</summary><ul id="myPosts"></ul></details></div>
+      <div><details><summary>Timeline</summary><ul id="timeline"></ul></details></div>
+
+      <h4>Section 5: Post Message</h4>
+      <label for="message">What do you want to post?</label><br>
+      <textarea id="message" value=""></textarea><br>
+      <button id="post">Post</button><br>
     </main>
   </body>
 </html>
